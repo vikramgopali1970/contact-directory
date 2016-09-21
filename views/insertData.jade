@@ -1,40 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="stylesheets/insertData.css">
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Robotocss">
-<title></title>
-</head>
-<body>
-<div class="container">
-<form action="" method="post">
-<h1>Save your Contact</h1>
-<div class="form-group">
-<input type="text" required="required" name="fname">
-<label for="input" class="control-label">First Name</label><i class="bar"></i>
-</div>
-<div class="form-group">
-<input type="text" required="required" name="lname">
-<label for="input" class="control-label">Last Name</label><i class="bar"></i>
-</div>
-<div class="form-group">
-<input type="number" required="required" name="mnumber">
-<label for="input" class="control-label">Mobile Number</label><i class="bar"></i>
-</div>
-<div class="form-group">
-<input type="email" required="required" name="email1">
-<label for="input" class="control-label">Email Id</label><i class="bar"></i>
-</div>
-<div class="button-container">
-<button type="submit" onclick="onSubmit()" value="submit" class="button"><span>submit</span></button>
-</div>
-<div id="afterSubmit">
-<label for="input" class="control-label">Contact Saved</label><i class="bar"></i>
-</div>
-</form>
-</div>
-<script>
-$("#myElem").fadeIn('slow').animate({opacity: 1.0}, 1500).effect("pulsate", { times: 2 }, 800).fadeOut('slow');
-    </script>
-    </body>
-    </html>
+doctype html
+html
+    head
+        link(rel='stylesheet', type='text/css', href='stylesheets/insertData.css')
+        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Robotocss')
+        title
+    body
+        .container
+            form(action='', method='post')
+                h1 Save your Contact
+                .form-group
+                    input(type='text', required='required', name='fname')
+                    label.control-label(for='input') First Name
+                    i.bar
+                .form-group
+                    input(type='text', required='required', name='lname')
+                    label.control-label(for='input') Last Name
+                    i.bar
+                .form-group
+                    input(type='number', required='required', name='mnumber')
+                    label.control-label(for='input') Mobile Number
+                    i.bar
+                .form-group
+                    input(type='email', required='required', name='email1')
+                    label.control-label(for='input') Email Id
+                    i.bar
+                .button-container
+                    button.button(type='submit', onclick='onSubmit()', value='submit')
+                        span submit

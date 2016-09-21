@@ -8,17 +8,11 @@ var f1,f2,f3,f4;
 router.get('/', function(req, res, next) {
     var validRoute = req.query.valid;
     if(validRoute == 'insertData'){
-        var doneloading = res.render('insertData', { });
+        res.render('insertData', { });
     }else{
         res.send('something is not write......start over');
     }
 
-    doneloading.then(function(){
-        var ele = document.getElementById('afterSubmit');
-        ele.style.display = "none";
-    }).catch(function(){
-        console.log('nahi hua bhai');
-    })
 });
 
 router.post('/', function(req, res, next) {
@@ -39,17 +33,12 @@ router.post('/', function(req, res, next) {
        dbSchema.find({}, function (err, qwerty) {
            if (err) throw err;
            // object of all the users
-           console.log(qwerty);
+           //console.log(qwerty);
        });
    }).catch(function(){
        console.log('not saved to db');
    });
-    //res.redirect('/savesuccess?valid=saved');
-   /* res.writeHead(302, {
-        'Location': 'http://localhost:3010/savesuccess'
-    });
-    res.end();*/
-
+    res.redirect('/savesuccess?valid=saved');
 });
 
 

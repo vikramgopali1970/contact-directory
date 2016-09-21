@@ -11,13 +11,15 @@ html
             br
         .nextstep
             .left
-                label Save another contact
                 br
-                button.button(type='button')
-                    span Save another
+                button.btn.orange(onclick="loadPage('/insertData')", type='button')
+                    span Save another Contact
             .left
-                label Search contacts
                 br
-                button.button(type='button')
-                    span Search
-                                      
+                button.btn.orange(onclick="loadPage('/getData')", type='button')
+                    span Search a Contact
+    script.
+        function loadPage(tUrl){
+            var url = "http://localhost:3010"+tUrl+"?valid="+tUrl.substring(1);
+            window.location=url;
+        }

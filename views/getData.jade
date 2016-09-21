@@ -1,11 +1,15 @@
 doctype html
 html
    head
-      title Lets inset the data
+      meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+      title Search Contact
+      link(rel='stylesheet', type='text/css', href='stylesheets/stylessearch.css')
    body
-      label Please insert the data you want to get
-      br
-      label field 1
-      input#field1(type='text')
-      br
-      button(onclick='#') search
+      #page
+         form#searchForm(method='post')
+            fieldset
+               input#s(type='text', name='searchquery')
+               input#submitButton(type='submit', value='Submit')
+      #results
+      script(src='javascripts/jquery-1.12.4.min.js')
+
