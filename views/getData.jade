@@ -1,15 +1,19 @@
 doctype html
 html
-   head
-      meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-      title Search Contact
-      link(rel='stylesheet', type='text/css', href='stylesheets/stylessearch.css')
-   body
-      #page
-         form#searchForm(method='post')
-            fieldset
-               input#s(type='text', name='searchquery')
-               input#submitButton(type='submit', value='Submit')
-      #results
-      script(src='javascripts/jquery-1.12.4.min.js')
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        title Search Contact
+        link(rel='stylesheet', type='text/css', href='stylesheets/stylessearch.css')
+    body(ng-app='myApp', ng-controller='myCtrl')
+        #page
+            form#searchForm(method='post', ng-submit="submit(firstname)")
+                fieldset
+                    input#s(type='text', name='searchquery', ng-model="firstname")
+                    input#submitButton(type='submit', value='Submit')
+        #results
+        script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
+        script(src='javascripts/jquery-1.12.4.min.js')
+        script(src='javascripts/getDataApp.js')
+
+
 
