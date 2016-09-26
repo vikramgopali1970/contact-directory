@@ -1,29 +1,31 @@
 doctype html
 html
     head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
         link(rel='stylesheet', type='text/css', href='stylesheets/insertData.css')
-        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Robotocss')
-        title
-    body
+        title save contact
+    body(ng-app='myApp', ng-controller='myContrlr')
         .container
-            form(action='', method='post')
+            form(action='', method='post', ng-submit='onSubmit()')
                 h1 Save your Contact
                 .form-group
-                    input(type='text', required='required', name='fname')
+                    input(type='text', required='required', name='fname', ng-model='firstName')
                     label.control-label(for='input') First Name
                     i.bar
                 .form-group
-                    input(type='text', required='required', name='lname')
+                    input(type='text', required='required', name='lname', ng-model='lastName')
                     label.control-label(for='input') Last Name
                     i.bar
                 .form-group
-                    input(type='number', required='required', name='mnumber')
+                    input(type='number', required='required', name='mnumber', ng-model='mobNumStr')
                     label.control-label(for='input') Mobile Number
                     i.bar
                 .form-group
-                    input(type='email', required='required', name='email1')
+                    input(type='email', required='required', name='email1', ng-model='emailStr')
                     label.control-label(for='input') Email Id
                     i.bar
                 .button-container
-                    button.button(type='submit', onclick='onSubmit()', value='submit')
-                        span submit
+                    button.button(type='submit', value='submit')
+                        span Save
+        script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
+        script(src='javascripts/insertDataApp.js')

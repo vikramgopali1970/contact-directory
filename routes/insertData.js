@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
     f1 = req.body.fname;
     f2 = req.body.lname;
     f3 = req.body.mnumber;
-    f4 = req.body.email1;
+    f4 = req.body.email;
     console.log('inside getdata',f1,f2,f3,f4);
 
     var newContact = new dbSchema({fname:f1,lname:f2,mnumber : f3, email : f4});
