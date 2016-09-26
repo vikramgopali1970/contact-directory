@@ -6,13 +6,7 @@ var dbSchema = require('./mongoConn');
 var router = express.Router();
 var f1,f2,f3,f4;
 router.get('/', function(req, res, next) {
-    var validRoute = req.query.valid;
-    if(validRoute == 'insertData'){
-        res.render('insertData', { });
-    }else{
-        res.send('something is not write......start over');
-    }
-
+    res.render('insertData', { });
 });
 
 router.post('/', function(req, res, next) {

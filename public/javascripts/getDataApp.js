@@ -6,7 +6,7 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', ['$scope','$http',function ($scope,$http) {
     $scope.submit = function(firstname){
-        $http.post('../getData',{ "name": firstname }).success( function(response) {
+        $http.post('/getData',{ "name": firstname }).success( function(response) {
             console.log("success - ", response.data);
         })
         .error( function(response) {
