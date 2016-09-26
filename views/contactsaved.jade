@@ -2,7 +2,7 @@ doctype html
 html
     head
         link(rel='stylesheet', type='text/css', href='stylesheets/savedcontact.css')
-        title saved
+        title Contact saved
     body
         h1 Contact saved successfully
     div
@@ -12,12 +12,16 @@ html
         .nextstep
             .left
                 br
-                button.btn.orange(onclick="loadPage('/insertData')", type='button')
-                    span Save another Contact
+                form(method='get', action='/insertData')
+                    | `
+                    button.btn.orange(type='submit')
+                        span Save another Contact
             .left
                 br
-                button.btn.orange(onclick="loadPage('/getData')", type='button')
-                    span Search a Contact
+                form(method='get', action='/getData')
+                    | `
+                    button.btn.orange(type='submit')
+                        span Search a Contact
     script.
         function loadPage(tUrl){
             var url = "http://localhost:3010"+tUrl+"?valid="+tUrl.substring(1);
