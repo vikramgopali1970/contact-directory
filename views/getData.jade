@@ -15,10 +15,11 @@ html
             ul
                 .plan(ng-repeat='contact in searchResult')
                     h3
-                        span {{contact.fname}}
+                        | {{contact.fname.toUpperCase()}}
                         br
-                        span {{contact.lname}}
-                        span $59
+                        | {{contact.lname.toUpperCase()}}
+                        span
+                            img(src='images/person.png', width='120px', height='120px' padding-right='50px')
                     ul
                         li
                             b Number
@@ -26,12 +27,6 @@ html
                         li
                             b Email
                             |  {{contact.email}}
-                        li
-                            b 20
-                            |  Email Accounts
-                        li
-                            b Unlimited
-                            |  subdomains
         script(src='http://s.codepen.io/assets/libs/modernizr.js', type='text/javascript')
         script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
         script(src='javascripts/jquery-1.12.4.min.js')
