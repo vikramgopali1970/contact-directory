@@ -4,7 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var User = require('/node_app_1/routes/mongoConn');
+var ContactUsersDb = require('/node_app_1/routes/mongoConn');
+var userDb = require('/node_app_1/routes/mongoUserDb');
+var session = require('client-sessions');
 
 var tst = require('/node_app_1/routes/insertData');
 var routes = require('./routes/index');
@@ -12,6 +14,7 @@ var users = require('./routes/users');
 var insertData = require('./routes/insertData');
 var getData = require('./routes/getData');
 var savesucces = require('./routes/contactsaved');
+var registration = require('./routes/registration')
 
 var app = express();
 
@@ -33,6 +36,7 @@ app.use('/users', users);
 app.use('/getData',getData);
 app.use('/insertData',insertData);
 app.use('/savesuccess',savesucces);
+app.use('/registration',registration);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,25 +45,13 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-/*var silence = new User({fname: 'vikram',lname :'gopali',mnumber : '8892658583', email : ''});*/
-
-/*
-var savehua = silence.save(function (err) {
-  if (err) throw err;
-  console.log('User saved successfully!');
-});
-*/
-/*
-savehua.then(function () {
-  User.find({}, function(err, users) {
-    if (err) throw err;
-    // object of all the users
-    console.log(users);
-  });
-}).catch(function () {
-  console.log('save nahi ho paya');
-});*/
-
+//session middleware
+app.use(session({
+  cookieName: 'session',
+  secret: 'testin_the _crypt',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+}));
 // error handlers
 
 // development error handler

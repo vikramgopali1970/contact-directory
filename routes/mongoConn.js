@@ -9,7 +9,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
  // we're connected!
-   console.log('connected');
+   console.log('connected to contacts DB');
 });
 
 var contactSchema = mongoose.Schema({

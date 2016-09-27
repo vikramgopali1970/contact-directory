@@ -15,9 +15,10 @@ body{
     border: 1px solid #ddd;
     color: #333;
     padding: 20px;
-    width: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */
+    width: 180px;
     float: left;
     position: relative;
+    transition: all 0.2s ease-out;
 }
 
 #pricing-table #most-popular {
@@ -179,11 +180,20 @@ body{
 }
 
 .plan:hover {
+
     -webkit-transform: scale(1.4);
     -moz-transform: scale(1.4);
     -ms-transform: scale(1.4);
     -o-transform: scale(1.4);
-    transform: scale(1.4);
+    transform: scale(1.2);
+    transition: all 0.2s 0.2s ease-out;
+    box-shadow: 0 2px 40px #555;
+    z-index: 10;
     position: fixed;
 
+}
+
+.adjustImg{
+    margin-left: -10px;
+    margin-top: -10px;
 }
