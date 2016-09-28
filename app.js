@@ -13,6 +13,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var insertData = require('./routes/insertData');
 var getData = require('./routes/getData');
+var loginpage = require('./routes/login');
 var savesucces = require('./routes/contactsaved');
 var registration = require('./routes/registration')
 
@@ -31,12 +32,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/getData',getData);
 app.use('/insertData',insertData);
 app.use('/savesuccess',savesucces);
 app.use('/registration',registration);
+app.use('/login',loginpage);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
