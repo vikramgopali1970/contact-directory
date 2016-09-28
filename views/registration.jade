@@ -23,6 +23,7 @@ html
                         .input-field.col.s6
                             input#email.validate(type='text', name='email', ng-model='username', required='')
                             label(for='first-name') username
+                            label(ng-show="errorMessage" ng-model="msg") {{errorMessage}}
                         p.alert.alert-danger(ng-show='form-register.email.$error.email') Your email is invalid.
                         .input-field.col.s6
                             input#password.validate(type='password', name='password', ng-model='password', ng-minlength='6', required='')
@@ -38,4 +39,5 @@ html
         script(src='http://code.jquery.com/jquery-2.1.4.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js')
+        script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js')
         script(src='javascripts/registrationApp.js')

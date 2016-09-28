@@ -2,7 +2,7 @@
  * Created by vgopali on 28-09-2016.
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/userDb_test');
+mongoose.connect('mongodb://localhost/userDb_test_1');
 
 
 var udb = mongoose.connection;
@@ -15,8 +15,8 @@ udb.once('open', function () {
 var contactSchema = mongoose.Schema({
     fname : String,
     lname : String,
-    uname : String,
-    password : String
+    uname_2 : String,
+    password_2 : String
 });
 
 var uSchema = mongoose.model('uSchema', contactSchema);

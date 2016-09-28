@@ -8,6 +8,7 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', ['$scope','$http',function ($scope,$http) {
     $scope.searchResult=[];
     $scope.submit = function(firstname){
+        $scope.searchResult=[];
         $http.post('/getData',{ "name": firstname }).success( function(response) {
             //console.log("success - ", response.data);
             angular.forEach(response.data,function (item) {
