@@ -9,7 +9,7 @@ var userDb = require('/node_app_1/routes/mongoUserDb');
 var session = require('client-sessions');
 
 var tst = require('/node_app_1/routes/insertData');
-var routes = require('./routes/index');
+var options = require('./routes/index');
 var users = require('./routes/users');
 var insertData = require('./routes/insertData');
 var getData = require('./routes/getData');
@@ -33,13 +33,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', routes);
+app.use('/options', options);
 app.use('/users', users);
 app.use('/getData',getData);
 app.use('/insertData',insertData);
 app.use('/savesuccess',savesucces);
 app.use('/registration',registration);
-app.use('/login',loginpage);
+app.use('/',loginpage);
 
 
 // catch 404 and forward to error handler

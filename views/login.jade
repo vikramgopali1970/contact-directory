@@ -1,6 +1,5 @@
 //
-   Created by vgopali on 29-09-2016.
-
+  Created by vgopali on 01-10-2016.
 html
     head
         meta(charset='utf-8')
@@ -9,7 +8,7 @@ html
         link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
         link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/icon?family=Material+Icons')
         link(rel='stylesheet', type='text/css', href='stylesheets/registration.css')
-    body(ng-app='myApp', ng-controller='LoginCtrl')
+    body(ng-app='myApp1', ng-controller='LoginCtrl')
         .container
             #signup
                 .signup-screen
@@ -18,19 +17,16 @@ html
                         .divider
                     form.form-register(method='post', name='register', novalidate='', ng-submit='submit()')
                         .input-field.col.s6
-                            input#email.validate(type='text', name='email', ng-model='username', required='')
+                            input#first-name.validate(type='text', name='usrname', ng-model='username_3', required='')
                             label(for='first-name') username
-                        //p.alert.alert-danger(ng-show='form-register.email.$error.email') Your email is invalid.
+                        // p.alert.alert-danger(ng-show='form-register.email.$error.email') Your email is invalid.
                         .input-field.col.s6
-                            input#password.validate(type='password', name='password', ng-model='password', ng-minlength='6', required='')
+                            input#password.validate(type='password', name='password', ng-model='password_3', ng-minlength='6', required='')
                             label(for='password') Password
-                        //p.alert.alert-danger(ng-show='form-register.password.$error.minlength || form.password.$invalid') Your password must be at least 6 characters.
+                        // p.alert.alert-danger(ng-show='form-register.password.$error.minlength || form.password.$invalid') Your password must be at least 6 characters.
                         .space-top.text-center
-                            button.waves-effect.waves-light.btn.done(ng-disabled='form-register.$invalid', type='submit', value='submit')
-                                i.material-icons.left login
-                                |  Login
+                            button.waves-effect.waves-light.btn.done(type='submit', value='submit') Login
         script(src='http://code.jquery.com/jquery-2.1.4.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js')
-        script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js')
-        script(src='javascripts/registrationApp.js')
+        script(src='javascripts/loginApp.js')
