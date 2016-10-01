@@ -6,7 +6,7 @@ html
         title save contact
     body(ng-app='myApp', ng-controller='myContrlr')
         .container
-            form(action='', method='post', ng-submit='onSubmit()')
+            form(method='post', ng-submit='submit()')
                 h1 Save your Contact
                 .form-group
                     input(type='text', required='required', name='fname', ng-model='firstName')

@@ -13,17 +13,22 @@ router.post('/', function(req, res, next) {
     f1 = req.body.fname;
     f2 = req.body.lname;
     f3 = req.body.mnumber;
-    f4 = req.body.email;
+    f4 = req.body.email1;
     console.log('inside getdata',f1,f2,f3,f4);
 
-    var newContact = new dbSchema({fname:f1,lname:f2,mnumber : f3, email : f4});
+    var newContact = new dbSchema({fname:f1,lname:f2,mnumber : f3, email_1 : f4});
 
-   var savedYes = newContact.save(function (err) {
-        if (err) throw err;
-        console.log('User saved successfully!');
+    return new Promise(function(resolve, reject) {
+       newContact.save(function (err) {
+            if (err) throw err;
+            console.log('User saved successfully!');
+           res.json({'success':true});
+           resolve();
+        });
     });
+    //res.redirect('/savesuccess?valid=saved');
 
-   savedYes.then(function() {
+   /*savedYes.then(function() {
        dbSchema.find({}, function (err, qwerty) {
            if (err) throw err;
            // object of all the users
@@ -31,12 +36,8 @@ router.post('/', function(req, res, next) {
        });
    }).catch(function(){
        console.log('not saved to db');
-   });
-    res.redirect('/savesuccess?valid=saved');
+   });*/
+    
 });
-
-
-
-var vars = [router,f1,f2,f3,f4];
 
 module.exports = router;

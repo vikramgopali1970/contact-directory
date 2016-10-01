@@ -7,12 +7,7 @@ var dbSchema = require('./mongoConn');
 
 
 router.get('/', function(req, res, next) {
-    var validRedirect = req.query.valid;
-    if(validRedirect == 'saved'){
-        res.render('contactsaved', { });
-    }else{
-        res.send('somethings not right...   ');
-    }
+    res.render('contactsaved', { });
 
 });
 

@@ -16,7 +16,7 @@ var contactSchema = mongoose.Schema({
    fname : String,
    lname : String,
    mnumber : String,
-   email : String
+   email_1 : String
 });
 
 var cSchema = mongoose.model('cSchema', contactSchema);
