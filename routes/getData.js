@@ -3,9 +3,10 @@
  */
 var express = require('express');
 var dbSchema = require('./mongoConn');
+var requireLogin = require('./requireLogin');
 var router = express.Router();
 
-router.get('/', function (req, res, next) {
+router.get('/', requireLogin,function (req, res, next) {
     res.render('getData', {});
 });
 

@@ -24,6 +24,40 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public'), {maxAge: 0}));
 app.set('view engine', 'jade');
 
+
+//session
+
+//set up a session
+app.use(session({
+  cookieName : 'session',
+  secret : 'eg[isfd-8yF9-7w1970df{}+Ijsli;;to9',
+  duration : 10 * 60 * 1000,
+  activeDuration : 5*60*1000,
+  httpOnly : true,
+  secure : true,
+  epemeral :true
+}));
+
+
+
+app.use(function(req,res,next){
+  if(req.session && req.session.user){
+    userDb.findOne({email : req.session.user.mail},function(err, usr){
+      if(usr){
+        req.usr = usr;
+        delete req.usr.password;
+        req.session.user = usr;
+        res.locals.user = usr;
+      }
+      next();
+    });
+  }else{
+    console.log("")
+    next();
+  }
+});
+
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

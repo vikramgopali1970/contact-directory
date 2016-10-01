@@ -5,6 +5,8 @@ var express = require('express');
 var dbSchema = require('./mongoUserDb');
 var router = express.Router();
 
+var requireLogin = require('./requireLogin');
+
 router.get('/', function(req, res, next) {
     res.render('login', { });
 });
@@ -28,6 +30,7 @@ router.post('/', function(req, res, next){
             console.log('here error logged');
             if(srchRes[0].password_2 === passWord){
                 console.log('here error logged121212');
+                req.session.user = srchRes[0];
                 res.json({success:true});
             }else{
                 res.status(500);
