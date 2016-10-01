@@ -5,7 +5,7 @@ var express = require('express');
 var dbSchema = require('./mongoUserDb');
 var router = express.Router();
 
-var requireLogin = require('./requireLogin');
+var requireLogin = require('./requireLogin');``
 
 router.get('/', requireLogin, function(req, res, next) {
     res.render('registration', { });

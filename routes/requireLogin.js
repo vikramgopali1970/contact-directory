@@ -3,7 +3,8 @@
  */
 
 module.exports = function(req,res,next){
-    if(!req.user){
+    console.log("check this string"+req.session.user);
+    if(!req.session.user){
         res.redirect('/');
     }else{
         next();

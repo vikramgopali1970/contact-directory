@@ -31,6 +31,7 @@ router.post('/', function(req, res, next){
             if(srchRes[0].password_2 === passWord){
                 console.log('here error logged121212');
                 req.session.user = srchRes[0];
+                console.log(req.session.user);
                 res.json({success:true});
             }else{
                 res.status(500);

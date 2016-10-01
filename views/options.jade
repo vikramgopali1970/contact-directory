@@ -4,11 +4,13 @@ html
     | What do you want to do?
     link(rel='stylesheet', type='text/css', href='stylesheets/index.css')
   body(ng-app='myApp', ng-controller='myController')
+    button.bttn-simple.bttn-md.bttn-warning(ng-onclick='logOut()')
+      | LogOut
     form(method='get', action='/insertData')
       #container(align='center')
         button.btn.orange(type='submit')
           span Save a Contact
-    form(method='get',action='/getData')
+    form(method='get', action='/getData')
       #container1(align='center')
         button.btn.orange(type='submit')
           span Search a Contact

@@ -9,7 +9,7 @@ var userDb = require('/node_app_1/routes/mongoUserDb');
 var session = require('client-sessions');
 
 var tst = require('/node_app_1/routes/insertData');
-var options = require('./routes/index');
+var options = require('./routes/options');
 var users = require('./routes/users');
 var insertData = require('./routes/insertData');
 var getData = require('./routes/getData');
@@ -52,7 +52,7 @@ app.use(function(req,res,next){
       next();
     });
   }else{
-    console.log("")
+    console.log("inside of appUse function failed");
     next();
   }
 });

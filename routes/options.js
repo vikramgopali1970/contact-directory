@@ -4,7 +4,7 @@ var requireLogin = require('./requireLogin');
 
 /* GET home page. */
 router.get('/', requireLogin, function(req, res, next) {
-  res.render('index', {});
+  res.render('options', {});
 });
 
 router.post('/',function(req, res){
