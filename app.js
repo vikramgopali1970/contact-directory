@@ -16,6 +16,7 @@ var getData = require('./routes/getData');
 var loginpage = require('./routes/login');
 var savesucces = require('./routes/contactsaved');
 var registration = require('./routes/registration')
+var logout = require('./routes/logout');
 
 var app = express();
 
@@ -74,6 +75,7 @@ app.use('/insertData',insertData);
 app.use('/savesuccess',savesucces);
 app.use('/registration',registration);
 app.use('/',loginpage);
+app.use('/logout',logout);
 
 
 // catch 404 and forward to error handler

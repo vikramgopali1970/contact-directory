@@ -2,10 +2,11 @@ doctype html
 html
   head
     | What do you want to do?
+    link(rel='stylesheet', type='text/css', href='stylesheets/bttn.min.css')
     link(rel='stylesheet', type='text/css', href='stylesheets/index.css')
   body(ng-app='myApp', ng-controller='myController')
-    button.bttn-simple.bttn-md.bttn-warning(ng-onclick='logOut()')
-      | LogOut
+    form(method='get', action='/logout')
+      button.bttn-simple.bttn-md.bttn-warning.logout-bttn(type='submit') LogOut
     form(method='get', action='/insertData')
       #container(align='center')
         button.btn.orange(type='submit')

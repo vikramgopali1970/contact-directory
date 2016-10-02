@@ -1,10 +1,13 @@
 doctype html
 html
     head
+        link(rel='stylesheet', type='text/css', href='stylesheets/bttn.min.css')
         link(rel='stylesheet', type='text/css', href='stylesheets/savedcontact.css')
         title Contact saved
     body
         h1 Contact saved successfully
+        form(method='get', action='/logout')
+            button.bttn-simple.bttn-md.bttn-warning.logout-bttn(type='submit') LogOut
     div
         .nextstep
             label What would you like to do now?

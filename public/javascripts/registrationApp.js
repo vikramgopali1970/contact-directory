@@ -15,7 +15,7 @@ app.controller("RegisterCtrl", ['$scope', '$http', function ($scope, $http) {
 
             }
             else if(result.success === true){
-                window.location = '/login';
+                window.location = '/';
             }
         }).error(function(error){
             console.log('error');

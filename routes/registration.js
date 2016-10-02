@@ -7,7 +7,7 @@ var router = express.Router();
 
 var requireLogin = require('./requireLogin');``
 
-router.get('/', requireLogin, function(req, res, next) {
+router.get('/', function(req, res, next) {
     res.render('registration', { });
 });
 

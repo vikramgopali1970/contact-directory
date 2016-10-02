@@ -1,4 +1,7 @@
 //
+   Created by vgopali on 02-10-2016.
+
+//
   Created by vgopali on 01-10-2016.
 html
     head
@@ -13,23 +16,11 @@ html
             #signup
                 .signup-screen
                     .space-bot.text-center
-                        h1 Login
+                        h1 You have logged out..
                         .divider
-                    form.form-register(method='post', name='register', novalidate='', ng-submit='submit()')
-                        .input-field.col.s6
-                            input#first-name.validate(type='text', name='usrname', ng-model='username_3', required='')
-                            label(for='first-name') username
-                        // p.alert.alert-danger(ng-show='form-register.email.$error.email') Your email is invalid.
-                        .input-field.col.s6
-                            input#password.validate(type='password', name='password', ng-model='password_3', ng-minlength='6', required='')
-                            label(for='password') Password
-                        // p.alert.alert-danger(ng-show='form-register.password.$error.minlength || form.password.$invalid') Your password must be at least 6 characters.
+                    form.form-register(method='get', name='register', novalidate='', action='/')
                         .space-top.text-center
                             button.waves-effect.waves-light.btn.done(type='submit', value='submit') Login
-                    form(method='get', action='/registration')
-                        .space-top.text-center
-                            button.waves-effect.waves-light.btn.done(type='submit', value='submit') Registration
         script(src='http://code.jquery.com/jquery-2.1.4.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js')
-        script(src='javascripts/loginApp.js')

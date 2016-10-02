@@ -2,9 +2,12 @@ doctype html
 html
     head
         meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        link(rel='stylesheet', type='text/css', href='stylesheets/bttn.min.css')
         link(rel='stylesheet', type='text/css', href='stylesheets/insertData.css')
         title save contact
     body(ng-app='myApp', ng-controller='myContrlr')
+        form(method='get', action='/logout')
+            button.bttn-simple.bttn-md.bttn-warning.logout-bttn(type='submit') LogOut
         .container
             form(method='post', ng-submit='submit()')
                 h1 Save your Contact

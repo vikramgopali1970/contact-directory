@@ -2,7 +2,7 @@
  * Created by vgopali on 08-09-2016.
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/contactstest_test_1');
+mongoose.connect('mongodb://localhost/contactstest_test_15');
 
 
 var db = mongoose.connection;
