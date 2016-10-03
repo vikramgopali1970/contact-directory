@@ -2,7 +2,7 @@
  * Created by vgopali on 28-09-2016.
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/userDb_te');
+mongoose.connect('mongodb://localhost/userDb_test_15');
 
 
 var udb = mongoose.connection;

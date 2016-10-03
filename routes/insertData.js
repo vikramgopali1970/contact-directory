@@ -4,8 +4,11 @@
 var express = require('express');
 var dbSchema = require('./mongoConn');
 var router = express.Router();
+var requireLogin = require('./requireLogin');
+
 var f1,f2,f3,f4;
-router.get('/', function(req, res, next) {
+
+router.get('/', requireLogin, function(req, res, next) {
     res.render('insertData', { });
 });
 
