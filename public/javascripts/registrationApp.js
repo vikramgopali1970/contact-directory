@@ -18,6 +18,7 @@ app.controller("RegisterCtrl", ['$scope', '$http', function ($scope, $http) {
                 window.location = '/';
             }
         }).error(function(error){
+            $scope.usrNameChck = true;
             console.log('error');
         })
     }

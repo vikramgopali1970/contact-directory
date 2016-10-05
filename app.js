@@ -69,7 +69,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/options', options);
-app.use('/users', users);
 app.use('/getData',getData);
 app.use('/insertData',insertData);
 app.use('/savesuccess',savesucces);
@@ -88,9 +87,9 @@ app.use(function(req, res, next) {
 //session middleware
 app.use(session({
   cookieName: 'session',
-  secret: 'testin_the _crypt',
-  duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000,
+  secret: 'testin_the _crypt'
+  //duration: 30 * 60 * 1000,
+  //activeDuration: 5 * 60 * 1000,
 }));
 // error handlers
 

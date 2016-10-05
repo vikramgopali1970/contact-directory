@@ -101,3 +101,7 @@ h1 {
     font-size: 12px;
     color: white
 }
+
+.loginerrormsg{
+    color: red;
+}

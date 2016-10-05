@@ -16,6 +16,8 @@ html
                         h1 Login
                         .divider
                     form.form-register(method='post', name='register', novalidate='', ng-submit='submit()')
+                        div(ng-if='myVar', ng-init='myVar=false' class='loginerrormsg')
+                            | Combination of username and password is wrong. Please check the credentials again.
                         .input-field.col.s6
                             input#first-name.validate(type='text', name='usrname', ng-model='username_3', required='')
                             label(for='first-name') username

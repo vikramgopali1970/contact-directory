@@ -29,6 +29,7 @@ router.post('/', function(req, res, next){
             console.log('later chechking in obj'+srchRes);
             if(srchRes.length > 0) {
                 console.log("username already exists");
+                res.status(500);
                 res.json({success: 'username_already_exists'});
             }else{
                 newContact.save(function (err) {

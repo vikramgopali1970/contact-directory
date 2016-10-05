@@ -15,6 +15,7 @@ app.controller('LoginCtrl',['$scope', '$http', function($scope, $http){
             }
 
         }).error(function(error){
+            $scope.myVar = true;
             console.log('error');
         })
     }

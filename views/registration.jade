@@ -14,6 +14,7 @@ html
                         h1 Sign up
                         .divider
                     form.form-register(method='post', name='register', novalidate='', ng-submit='submit()')
+                        .regerrormsg(ng-if='usrNameChck', ng-init='usrNameChck=false') UserName already exists
                         .input-field.col.s6
                             input#first-name.validate(type='text', required='', ng-model='firstName')
                             label(for='first-name') First Name
@@ -23,7 +24,7 @@ html
                         .input-field.col.s6
                             input#email.validate(type='text', name='email', ng-model='username', required='')
                             label(for='first-name') username
-                            label(ng-show="errorMessage" ng-model="msg") {{errorMessage}}
+                            label(ng-show='errorMessage', ng-model='msg') {{errorMessage}}
                         p.alert.alert-danger(ng-show='form-register.email.$error.email') Your email is invalid.
                         .input-field.col.s6
                             input#password.validate(type='password', name='password', ng-model='password', ng-minlength='6', required='')
